@@ -101,7 +101,7 @@
         //         break;
         //     }
 
-        const light = "green";
+        // const light = "green";
 
         // if (light === "yellow") {
         //     document.write("Caution");
@@ -153,12 +153,72 @@
         // const { name, age, occupation } = person ;
         // console.log(occupation);
 
-        const persontwo ={ name: "Jahangir", age: 30, occupation: "Developer"};
-        const { name,...details } = persontwo ;
-        console.log(details);
-
-
+        // const persontwo ={ name: "Jahangir", age: 30, occupation: "Developer"};
+        // const { name,...details } = persontwo ;
+        // console.log(details);
     </script>
+    <h2>LocalStorage CRUD Operations</h2>
+    <label for="name" >Name:</label>
+    <input type ="text" id="name" name="name" placeholder="Enter your name">
+    <br><br>
+    <label for="age" >Age:</label>
+    <input type ="number" id="age" name="age" placeholder="Enter your age">
+    <br><br>
+    <button onclick="storeData()">Store Data</button>
+    <button onclick="retrieveData()">Retrieve Data</button>
+    <button onclick="clearData()">Clear Data</button>
+    <button onclick="updateData()">Update Data</button>
+    <br><br>
+
+    <h3>Result</h3>
+    <p id="result">Click a button to see the result</p>
+    <script>
+        function storeData(){
+            const name = document.getElementById("name").value
+            const age = document.getElementById("age").value
+
+            if (name && age){
+            const person ={name, age}
+                localStorage.setItem("person", JSON.stringify(person))
+                document.getElementById("result").innerText = "Data stored successfully"
+            } else {
+                document.getElementById("result").innerText = "Please enter both name and age"
+            }
+
+        }
+        function retrieveData(){
+          const person = localStorage.getItem("person")
+          if (person){
+            const parsedPerson = JSON.parse(person)
+            document.getElementById("name").value = parsedPerson.name;
+            document.getElementById("age").value = parsedPerson.age;
+            document.getElementById("result").innerText = "Data"
+            document.getElementById("result").innerText = `Name: ${parsedPerson.name}, Age: ${parsedPerson.age}`;
+            } else {
+                document.getElementById("result").innerText = "No data found"
+            }
+            }
+            
+            // function updateData(){
+            //     const name = document.getElementById("name").value
+            //     const age = document.getElementById("age").value}
+            //     if (name && age){
+            //         localStorage.setItem("name", name)
+            //         localStorage.setItem("age", age)
+            //         document.getElementById("result").innerText = "Data updated successfully"
+            //     } else {
+            //         document.getElementById("result").innerText = "Please enter both name and age"
+            //     }
+
+
+            function clearData(){
+                document.getElementById("name").value ="";
+                document.getElementById("age").value ="";}
+
+           
+                
+    </script>
+
 </body>
 
 </html>

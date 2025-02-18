@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body { font-family: Arial, sans-serif; text-align: center; }
+        table { width: 50%; margin: auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 10px; }
+        .container { margin-top: 20px; }
+
+    </style>
+</head>
+<body>
+  <h2>
+    student marksheet generator
+  </h2>
+  <div class="container">
+    <label> student name: <input type="text" id=" studentName"></label><br> <br>
+    <label> math: <input type="number" id="math"></label><br> <br>
+    <label> science: <input type="number" id="science"></label><br> <br>
+    <label> english: <input type="number" id="english"></label><br> <br>
+    <button onclick="saveData()">save marksheet</button>
+    <button onclick="displaydata()">show marksheet</button>
+    <button onclick="cleardata()">clear marksheet</button>
+    <div id="marksheet"></div>
+    <script>
+        function saveData(){
+            let studentName = document.getElementById("studentName").value;
+            let math = document.getElementById("math").value;
+            let science = document.getElementById("science").value;
+            let english = document.getElementById("english").value;
+            if (!studentName || !math || !science || !english) {
+                alert ("Please fill all fields");
+                return;
+                }
+                let studentData ={ student, math, english,science};
+                sessionStorage.setItem("marksheet", JSON.stringify(studentData));
+                alert("marksheet saved successfully");
+
+                }
+        
+        </script>
+</body>
+</html>

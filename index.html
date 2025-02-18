@@ -157,7 +157,7 @@
         // const { name,...details } = persontwo ;
         // console.log(details);
     </script>
-    <h2>LocalStorage CRUD Operations</h2>
+    <!-- <h2>LocalStorage CRUD Operations</h2>
     <label for="name" >Name:</label>
     <input type ="text" id="name" name="name" placeholder="Enter your name">
     <br><br>
@@ -192,14 +192,36 @@
             const parsedPerson = JSON.parse(person)
             document.getElementById("name").value = parsedPerson.name;
             document.getElementById("age").value = parsedPerson.age;
-            document.getElementById("result").innerText = "Data"
+
             document.getElementById("result").innerText = `Name: ${parsedPerson.name}, Age: ${parsedPerson.age}`;
             } else {
                 document.getElementById("result").innerText = "No data found"
             }
             }
+
+         function updateData(){
+            const person = localStorage.getItem("person");
+            if (person){
+            const name = document.getElementById("name").value;
+              const age = document.getElementById ("age"). value;
+                if (name && age){
+                    const updatedPerson = {name, age};
+                    localStorage.setItem("person", JSON.stringify(updatedPerson));
+                    document.getElementById("result").innerText = "record update successfully";
+                    clearData();}
+                    else{
+                        document.getElementById("result").innerText = "please enter name and age";
+
+                    }}
+                    else {
+                        document.getElementById("result"). innerText = "no data found";
+
+                    }
+
+                } -->
             
-            // function updateData(){
+
+            <!-- // function updateData(){
             //     const name = document.getElementById("name").value
             //     const age = document.getElementById("age").value}
             //     if (name && age){
@@ -214,6 +236,7 @@
             function clearData(){
                 document.getElementById("name").value ="";
                 document.getElementById("age").value ="";}
+                 -->
 
            
                 

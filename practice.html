@@ -18,13 +18,13 @@
   </h2>
   <div class="container">
     <label> student name: <input type="text" id="studentName"></label><br> <br>
+    <label> student name: <input type="text" id="studentName"></label><br> <br>
     <label> math: <input type="number" id="math"></label><br> <br>
     <label> science: <input type="number" id="science"></label><br> <br>
     <label> english: <input type="number" id="english"></label><br> <br>
     <button onclick="saveData()">save marksheet</button>
     <button onclick="displayData()">show marksheet</button>
     <button onclick="clearData()">clear marksheet</button>
-    </div>
     <div id="marksheet"></div>
     <script>
         function saveData(){
@@ -36,7 +36,7 @@
                 alert ("Please fill all fields");
                 return;
                 }
-                let studentData ={ studentName, math, english,science};
+                let studentData ={ studentName, math, english, science};
                 sessionStorage.setItem("marksheet", JSON.stringify(studentData));
                 alert("marksheet saved successfully");
 

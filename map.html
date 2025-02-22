@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <p id="myParagraph"> Original text</p>
+    <button onclick="changeText()">Change Text</button>
     <script>
        
     //    const users = [
@@ -34,16 +36,21 @@
         // const found = numbers.filter(num => num > 3);
 
         //constructor function//
-        function Person(first, last, age, eyeColor){
-            this.firstName = first;
-            this.lastName = last;
-            this.age = age;
-           this.eyeColor = eyeColor;
+        // function Person(first, last, age, eyeColor){
+        //     this.firstName = first;
+        //     this.lastName = last;
+        //     this.age = age;
+        //    this.eyeColor = eyeColor;
 
+        // }
+        // const PersonOne = new Person("awais", "Ahmed", "30","brown" );
+        // const Persontwo = new Person("awais", "Ahmed", "30","brown" );
+        // console.log(PersonOne);
+        function changeText(){
+            const paragraph = document.getElementById("myParagraph");
+            paragraph.textContent = "New Text";
+            paragraph.style.color = "red";
         }
-        const PersonOne = new Person("awais", "Ahmed", "30","brown" );
-        const Persontwo = new Person("awais", "Ahmed", "30","brown" );
-        console.log(PersonOne);
 
     </script>
 </body>

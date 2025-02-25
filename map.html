@@ -6,8 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="myParagraph"> Original text</p>
-    <button onclick="changeText()">Change Text</button>
+    <!-- <p id="myParagraph"> Original text</p>
+    <p >TEXT</p>
+    <p name = "password"> old password</p>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <button onclick="changeText()">Change Text</button> -->
     <script>
        
     //    const users = [
@@ -35,7 +40,7 @@
         // const numbers = [1, 2, 3, 4, 5];
         // const found = numbers.filter(num => num > 3);
 
-        //constructor function//
+        // constructor function//
         // function Person(first, last, age, eyeColor){
         //     this.firstName = first;
         //     this.lastName = last;
@@ -46,11 +51,50 @@
         // const PersonOne = new Person("awais", "Ahmed", "30","brown" );
         // const Persontwo = new Person("awais", "Ahmed", "30","brown" );
         // console.log(PersonOne);
-        function changeText(){
-            const paragraph = document.getElementById("myParagraph");
-            paragraph.textContent = "New Text";
-            paragraph.style.color = "red";
+        // function changeText(){
+        //     const paragraph = document.getElementById("myParagraph");
+        //     paragraph.textContent = "New Text";
+        //     paragraph.style.color = "red";
+        // }
+
+        // 25/2/2025
+        // function changeText(){
+        //     let paragraphs = document.getElementsByTagName("p");
+        //     paragraphs[1].innerText = "New TEXT";
+        // }
+        // function changeText(){
+        //     let elements = document.getElementsByName("password");
+        //     elements[0].innerText = "New Password";
+        // }
+        // function changeText(){
+        //     let box = document.getElementsByClassName("box1")[0];
+        //     box.textContent = "New Text";
+        //     box.style.color = "red";
+
+        // }
+        // THIS IS GLOBAL SCOPE
+        // let myText = "Hello World";
+        // function myFunc(){
+        //     console.log(myText);
+        // }
+        // myFunc();
+        // console.log(myText);
+        // THIS IS LOCAL SCOPE OR FUNCTION SCOPE OR BLOCK SCOPE
+      
+        function createCounter(){
+            let count = 0;
+            return function(){
+                count++;
+               console.log(count);
+            }
         }
+        let counter = createCounter();
+        counter();
+        counter();
+        counter();
+    
+
+
 
     </script>
 </body>
